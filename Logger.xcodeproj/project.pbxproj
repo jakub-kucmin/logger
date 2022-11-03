@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		8A87D7DC2913BC9E00B184ED /* LoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7DB2913BC9E00B184ED /* LoggerApp.swift */; };
-		8A87D7DE2913BC9E00B184ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7DD2913BC9E00B184ED /* ContentView.swift */; };
 		8A87D7E02913BCA000B184ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A87D7DF2913BCA000B184ED /* Assets.xcassets */; };
 		8A87D7E32913BCA000B184ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A87D7E22913BCA000B184ED /* Preview Assets.xcassets */; };
 		8A87D7E52913BCA000B184ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7E42913BCA000B184ED /* Persistence.swift */; };
-		8A87D7E82913BCA000B184ED /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7E62913BCA000B184ED /* Logger.xcdatamodeld */; };
 		8A87D7EF2913BFFD00B184ED /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A87D7EE2913BFFD00B184ED /* .swiftlint.yml */; };
+		8A87D7F42913C77100B184ED /* LoggerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7F32913C77100B184ED /* LoggerRepository.swift */; };
+		8A87D7F72913C7B600B184ED /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7F62913C7B600B184ED /* LoggerModel.swift */; };
+		8A87D7F92913C7C800B184ED /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7F82913C7C800B184ED /* LoggerType.swift */; };
+		8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A87D7D82913BC9E00B184ED /* Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A87D7DB2913BC9E00B184ED /* LoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerApp.swift; sourceTree = "<group>"; };
-		8A87D7DD2913BC9E00B184ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A87D7DF2913BCA000B184ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A87D7E22913BCA000B184ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A87D7E42913BCA000B184ED /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		8A87D7E72913BCA000B184ED /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		8A87D7EE2913BFFD00B184ED /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8A87D7F32913C77100B184ED /* LoggerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerRepository.swift; sourceTree = "<group>"; };
+		8A87D7F62913C7B600B184ED /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
+		8A87D7F82913C7C800B184ED /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
+		8A87D7FB2913CC0A00B184ED /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,10 @@
 		8A87D7DA2913BC9E00B184ED /* Logger */ = {
 			isa = PBXGroup;
 			children = (
+				8A87D7F52913C7A700B184ED /* Models */,
+				8A87D7F22913C73C00B184ED /* Repository */,
 				8A87D7DB2913BC9E00B184ED /* LoggerApp.swift */,
-				8A87D7DD2913BC9E00B184ED /* ContentView.swift */,
 				8A87D7DF2913BCA000B184ED /* Assets.xcassets */,
-				8A87D7E42913BCA000B184ED /* Persistence.swift */,
-				8A87D7E62913BCA000B184ED /* Logger.xcdatamodeld */,
 				8A87D7E12913BCA000B184ED /* Preview Content */,
 			);
 			path = Logger;
@@ -74,6 +77,25 @@
 				8A87D7E22913BCA000B184ED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8A87D7F22913C73C00B184ED /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8A87D7E42913BCA000B184ED /* Persistence.swift */,
+				8A87D7F32913C77100B184ED /* LoggerRepository.swift */,
+				8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8A87D7F52913C7A700B184ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A87D7F62913C7B600B184ED /* LoggerModel.swift */,
+				8A87D7F82913C7C800B184ED /* LoggerType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A87D7F92913C7C800B184ED /* LoggerType.swift in Sources */,
 				8A87D7E52913BCA000B184ED /* Persistence.swift in Sources */,
-				8A87D7DE2913BC9E00B184ED /* ContentView.swift in Sources */,
+				8A87D7F42913C77100B184ED /* LoggerRepository.swift in Sources */,
+				8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */,
+				8A87D7F72913C7B600B184ED /* LoggerModel.swift in Sources */,
 				8A87D7DC2913BC9E00B184ED /* LoggerApp.swift in Sources */,
-				8A87D7E82913BCA000B184ED /* Logger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,12 +409,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8A87D7E62913BCA000B184ED /* Logger.xcdatamodeld */ = {
+		8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8A87D7E72913BCA000B184ED /* Logger.xcdatamodel */,
+				8A87D7FB2913CC0A00B184ED /* Logger.xcdatamodel */,
 			);
-			currentVersion = 8A87D7E72913BCA000B184ED /* Logger.xcdatamodel */;
+			currentVersion = 8A87D7FB2913CC0A00B184ED /* Logger.xcdatamodel */;
 			path = Logger.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
