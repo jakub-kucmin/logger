@@ -16,6 +16,8 @@
 		8A87D7F72913C7B600B184ED /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7F62913C7B600B184ED /* LoggerModel.swift */; };
 		8A87D7F92913C7C800B184ED /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7F82913C7C800B184ED /* LoggerType.swift */; };
 		8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */; };
+		8A87D7FF2913D71000B184ED /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D7FE2913D71000B184ED /* Logger.swift */; };
+		8A87D8012913DE6800B184ED /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8002913DE6800B184ED /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		8A87D7F62913C7B600B184ED /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
 		8A87D7F82913C7C800B184ED /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
 		8A87D7FB2913CC0A00B184ED /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
+		8A87D7FE2913D71000B184ED /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		8A87D8002913DE6800B184ED /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 				8A87D7F52913C7A700B184ED /* Models */,
 				8A87D7F22913C73C00B184ED /* Repository */,
 				8A87D7DB2913BC9E00B184ED /* LoggerApp.swift */,
+				8A87D7FE2913D71000B184ED /* Logger.swift */,
 				8A87D7DF2913BCA000B184ED /* Assets.xcassets */,
 				8A87D7E12913BCA000B184ED /* Preview Content */,
+				8A87D8002913DE6800B184ED /* Cell.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				8A87D7E52913BCA000B184ED /* Persistence.swift in Sources */,
 				8A87D7F42913C77100B184ED /* LoggerRepository.swift in Sources */,
 				8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */,
+				8A87D7FF2913D71000B184ED /* Logger.swift in Sources */,
+				8A87D8012913DE6800B184ED /* Cell.swift in Sources */,
 				8A87D7F72913C7B600B184ED /* LoggerModel.swift in Sources */,
 				8A87D7DC2913BC9E00B184ED /* LoggerApp.swift in Sources */,
 			);
