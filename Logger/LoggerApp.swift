@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LoggerApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceServiceImpl.shared
 
     var body: some Scene {
         WindowGroup {
