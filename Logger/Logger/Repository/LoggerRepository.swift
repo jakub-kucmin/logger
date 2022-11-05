@@ -11,6 +11,7 @@ protocol LoggerRepository {
     func save(model: LoggerModel)
     func fetch() -> [LoggerModel]
     func fetch(id: UUID) -> LoggerModel?
+    func deleteAllLogs()
 }
 
 struct LoggerRepositoryImpl: LoggerRepository {
@@ -31,7 +32,7 @@ struct LoggerRepositoryImpl: LoggerRepository {
     
     func fetch() -> [LoggerModel] {
         let request = CDLogger.fetchRequest()
-        var result: [CDLogger] = []
+        var result: [CDLogger]
         
         do {
             try result = service.viewContext.fetch(request)
@@ -61,5 +62,18 @@ struct LoggerRepositoryImpl: LoggerRepository {
         
         let log = LoggerModel(cdLogger: result)
         return log
+    }
+    
+    func deleteAllLogs() {
+        let request = CDLogger.fetchRequest()
+        var logs: [CDLogger]
+        
+        do {
+            try logs = service.viewContext.fetch(request)
+            logs.forEach { service.viewContext.delete($0) }
+        } catch {
+            return
+        }
+        service.saveContext()
     }
 }

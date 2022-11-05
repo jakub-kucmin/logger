@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct LoggerApp: App {
-    let persistenceController = PersistenceServiceImpl.shared
-
     var body: some Scene {
         WindowGroup {
-            Text("Test")
+            NavigationView {
+                TestView(viewModel: TestViewModel())
+            }
         }
     }
 }

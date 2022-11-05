@@ -13,9 +13,12 @@ struct Cell: View {
     var body: some View {
         HStack {
             Text(loggerModel.type.rawValue.capitalized)
+                .padding(.leading, 24)
             Spacer()
-            Text("\(loggerModel.date)")
+            Text(loggerModel.dateFormatter.string(from: loggerModel.date))
+                .padding(.trailing, 24)
         }
+        .foregroundColor(loggerModel.type.color)
     }
 }
 
