@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct LogDetails: View {
-    var viewModel: LogDetailsViewModel
+    @StateObject var viewModel: LogDetailsViewModel
     
     var body: some View {
-        VStack {
-            Text(viewModel.loggerModel.responseBody ?? "")
+        ScrollView {
+            if viewModel.loggerModel.type == .networking {
+                networkingLogDetails
+            } else {
+                logDetails
+            }
         }
+    }
+}
+
+private extension LogDetails {
+    private var logDetails: some View {
+        VStack {
+            Text(viewModel.convertDateToString())
+            Text(viewModel.loggerModel.message)
+        }
+        .padding(.horizontal, 24)
+    }
+    
+    private var networkingLogDetails: some View {
+        VStack(spacing: 24) {
+            Text(viewModel.loggerModel.responseBody ?? "")
+                .font(.system(size: 13))
+            Text(viewModel.loggerModel.body ?? "")
+                .font(.system(size: 13))
+        }
+        .padding(.horizontal, 24)
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import OSLog
 
 final class TestViewModel: ObservableObject {
     
@@ -18,19 +19,19 @@ final class TestViewModel: ObservableObject {
     }
     
     func saveInfoLog() {
-        logger.log(type: .info, "INFO")
+        logger.log(type: .info, "INFO", category: LoggerType.info.rawValue)
     }
     
     func saveErrorLog() {
-        logger.log(type: .error, "ERROR")
+        logger.log(type: .error, "ERROR", category: LoggerType.error.rawValue)
     }
     
     func saveDebugLog() {
-        logger.log(type: .debug, "DEBUG")
+        logger.log(type: .debug, "DEBUG", category: LoggerType.debug.rawValue)
     }
     
     func saveNetworkLog() {
-        logger.log(type: .networking, "REQUEST")
+        logger.log(type: .networking, "REQUEST", category: LoggerType.networking.rawValue)
     }
     
     func deleteLogs() {
@@ -38,7 +39,7 @@ final class TestViewModel: ObservableObject {
     }
     
     func get() {
-        guard let url = URL(string: "https://catfact.ninja/fact") else {
+        guard let url = URL(string: "ttps://catfact.ninja/fact") else {
             return
         }
         
@@ -46,9 +47,9 @@ final class TestViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    self.logger.log(type: .info, "Finished fetching")
+                    self.logger.log(type: .info, "Finished fetching", category: LoggerType.info.rawValue)
                 case .failure(let error):
-                    self.logger.log(error)
+                    self.logger.log(error, category: LoggerType.error.rawValue)
                 }
             } receiveValue: { data, _ in
                 print(data)
