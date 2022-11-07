@@ -22,12 +22,13 @@ struct PersistenceServiceImpl: PersistenceService {
     
     private let container: NSPersistentContainer
     
-    private init(name: String = "Model") {
+    private init(name: String = "Logger") {
         container = NSPersistentContainer(name: name)
         container.loadPersistentStores { _, error in
             if let error = error {
                 print(error)
             }
+            URLProtocol.registerClass(NetworkLogger.self)
         }
     }
     
