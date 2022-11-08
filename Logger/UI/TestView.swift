@@ -11,10 +11,10 @@ struct TestView: View {
     @StateObject var viewModel: TestViewModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             buttons
             NavigationLink {
-                LoggerTable(viewModel: LoggerTableViewModel())
+                LoggerTable(viewModel: LoggerTableViewModel(), backgroundColor: .yellow, foregroundColor: .black)
             } label: {
                 Text("Logs")
                     .foregroundColor(.green)
@@ -25,9 +25,6 @@ struct TestView: View {
                 Text("Delete logs")
                     .foregroundColor(.red)
             }
-        }
-        .onAppear {
-            viewModel.get()
         }
     }
     
@@ -49,7 +46,7 @@ struct TestView: View {
                 Text("Create debug log")
             }
             Button {
-                viewModel.saveNetworkLog()
+                viewModel.get()
             } label: {
                 Text("Create request log")
             }

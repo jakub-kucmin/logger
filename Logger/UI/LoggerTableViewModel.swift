@@ -20,4 +20,8 @@ final class LoggerTableViewModel: ObservableObject {
     func getLogs() {
         loggerModel = logger.getLogs()
     }
+    
+    func deleteOldLoggs() {
+        logger.deleteOldLogs()
+    }
 }

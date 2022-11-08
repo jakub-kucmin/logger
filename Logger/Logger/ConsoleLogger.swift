@@ -7,16 +7,16 @@
 
 import OSLog
 
-class ConsoleLogger {
+public final class ConsoleLogger {
     static let shared = ConsoleLogger()
     
     private let logger: Logger
     
-    init(logger: Logger = Logger()) {
+    private init(logger: Logger = Logger()) {
         self.logger = logger
     }
     
-    func log(_ message: Any..., type: OSLogType, loggerPrivacy: LoggerPrivacyType, category: String) {
+    public func log(_ message: Any..., type: OSLogType, loggerPrivacy: LoggerPrivacyType, category: String) {
         switch loggerPrivacy {
         case .private:
             logger.log(level: type, "\(message, privacy: .private)")
@@ -29,7 +29,7 @@ class ConsoleLogger {
         }
     }
     
-    func log(_ error: Error, loggerPrivacy: LoggerPrivacyType, category: String) {
+    public func log(_ error: Error, loggerPrivacy: LoggerPrivacyType, category: String) {
         switch loggerPrivacy {
         case .private:
             logger.error("\(error, privacy: .private)")
@@ -41,11 +41,4 @@ class ConsoleLogger {
             logger.error("\(error, privacy: .auto)")
         }
     }
-}
-
-enum LoggerPrivacyType {
-    case `private`
-    case `public`
-    case sensitive
-    case auto
 }

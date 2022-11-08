@@ -39,7 +39,7 @@ final class TestViewModel: ObservableObject {
     }
     
     func get() {
-        guard let url = URL(string: "ttps://catfact.ninja/fact") else {
+        guard let url = URL(string: "https://catfact.ninja/fact") else {
             return
         }
         
@@ -54,6 +54,5 @@ final class TestViewModel: ObservableObject {
             } receiveValue: { data, _ in
                 print(data)
             }
-
     }
 }
