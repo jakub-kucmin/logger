@@ -32,9 +32,9 @@ private extension LogDetails {
     
     private var networkingLogDetails: some View {
         VStack(spacing: 24) {
-            Text(viewModel.loggerModel.responseBody ?? "")
-                .font(.system(size: 13))
             Text(viewModel.loggerModel.body ?? "")
+                .font(.system(size: 13))
+            Text(viewModel.loggerModel.responseBody ?? "")
                 .font(.system(size: 13))
         }
         .padding(.horizontal, 24)

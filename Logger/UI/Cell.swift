@@ -12,13 +12,19 @@ struct Cell: View {
     
     var body: some View {
         HStack {
+            Rectangle()
+                .frame(width: 4)
+                .frame(maxHeight: .infinity)
+                .foregroundColor(loggerModel.type.color)
             Text(loggerModel.type.rawValue.capitalized)
                 .padding(.leading, 24)
+                .foregroundColor(loggerModel.type.color)
             Spacer()
-            Text(loggerModel.dateFormatter.string(from: loggerModel.date))
+            Text(loggerModel.getDate())
                 .padding(.trailing, 24)
+                .foregroundColor(Color.black)
         }
-        .foregroundColor(loggerModel.type.color)
+        .frame(height: 50)
     }
 }
 

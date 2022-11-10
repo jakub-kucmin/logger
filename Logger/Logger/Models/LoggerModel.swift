@@ -7,7 +7,7 @@
 
 import CoreData
 
-class LoggerModel {
+public class LoggerModel {
     var date: Date
     var id: UUID
     var type: LoggerType
@@ -59,6 +59,10 @@ class LoggerModel {
         self.dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd.yyyy, h:mm a"
     }
+    
+    public func getDate() -> String {
+        return dateFormatter.string(from: self.date)
+    }
 }
 
 extension LoggerModel {
@@ -70,8 +74,7 @@ extension LoggerModel {
               let stringType = cdLogger.type,
               let type = LoggerType(rawValue: stringType),
               let message = cdLogger.message,
-              let stringDate = cdLogger.date,
-              let date = dateFormatter.date(from: stringDate) else {
+              let date = cdLogger.date else {
             return nil
         }
                 
@@ -102,7 +105,7 @@ extension CDLogger {
         self.id = model.id
         self.message = model.message
         self.type = model.type.rawValue
-        self.date = dateFormatter.string(from: model.date)
+        self.date = model.date
         self.curl = model.curl
         self.method = model.method
         self.body = model.body

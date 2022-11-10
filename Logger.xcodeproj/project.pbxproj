@@ -28,6 +28,8 @@
 		8A87D81629150FAE00B184ED /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D81529150FAE00B184ED /* NetworkLogger.swift */; };
 		8A87D81829150FE800B184ED /* NetworkLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D81729150FE800B184ED /* NetworkLogModel.swift */; };
 		8A87D81B2915115C00B184ED /* Networking+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D81A2915115C00B184ED /* Networking+Extension.swift */; };
+		8A8AAD71291AA116009D825F /* OperationQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */; };
+		8A8AAD73291D04DE009D825F /* LoggerPrivacyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		8A87D81529150FAE00B184ED /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		8A87D81729150FE800B184ED /* NetworkLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogModel.swift; sourceTree = "<group>"; };
 		8A87D81A2915115C00B184ED /* Networking+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Extension.swift"; sourceTree = "<group>"; };
+		8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extension.swift"; sourceTree = "<group>"; };
+		8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPrivacyType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				8A87D7F52913C7A700B184ED /* Models */,
 				8A87D80F2914FCFA00B184ED /* ConsoleLogger.swift */,
 				8A87D7FE2913D71000B184ED /* FilmeoLogger.swift */,
+				8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -139,13 +144,12 @@
 		8A87D81329150F5F00B184ED /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8A87D81C29193ED000B184ED /* Details */,
 				8A87D8002913DE6800B184ED /* Cell.swift */,
 				8A87D8032913DFDE00B184ED /* LoggerTable.swift */,
 				8A87D8052913E00100B184ED /* LoggerTableViewModel.swift */,
 				8A87D8072913E21300B184ED /* TestView.swift */,
 				8A87D8092913E22300B184ED /* TestViewModel.swift */,
-				8A87D80B2914077300B184ED /* LogDetails.swift */,
-				8A87D80D2914080600B184ED /* LogDetailsViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -162,8 +166,18 @@
 			isa = PBXGroup;
 			children = (
 				8A87D81A2915115C00B184ED /* Networking+Extension.swift */,
+				8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A87D81C29193ED000B184ED /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8A87D80B2914077300B184ED /* LogDetails.swift */,
+				8A87D80D2914080600B184ED /* LogDetailsViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +279,7 @@
 				8A87D8102914FCFA00B184ED /* ConsoleLogger.swift in Sources */,
 				8A87D7E52913BCA000B184ED /* Persistence.swift in Sources */,
 				8A87D7F42913C77100B184ED /* LoggerRepository.swift in Sources */,
+				8A8AAD73291D04DE009D825F /* LoggerPrivacyType.swift in Sources */,
 				8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */,
 				8A87D81B2915115C00B184ED /* Networking+Extension.swift in Sources */,
 				8A87D80A2913E22300B184ED /* TestViewModel.swift in Sources */,
@@ -277,6 +292,7 @@
 				8A87D8012913DE6800B184ED /* Cell.swift in Sources */,
 				8A87D7F72913C7B600B184ED /* LoggerModel.swift in Sources */,
 				8A87D7DC2913BC9E00B184ED /* LoggerApp.swift in Sources */,
+				8A8AAD71291AA116009D825F /* OperationQueue+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger/Preview Content\"";
-				DEVELOPMENT_TEAM = FUGZXHG48P;
+				DEVELOPMENT_TEAM = B78XDNYG5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -420,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = private.Logger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.logger.iteo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -439,7 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Logger/Preview Content\"";
-				DEVELOPMENT_TEAM = FUGZXHG48P;
+				DEVELOPMENT_TEAM = B78XDNYG5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -454,7 +470,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = private.Logger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.logger.iteo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

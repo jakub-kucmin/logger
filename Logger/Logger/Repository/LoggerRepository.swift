@@ -12,10 +12,12 @@ protocol LoggerRepository {
     func fetch() -> [LoggerModel]
     func fetch(id: UUID) -> LoggerModel?
     func deleteAllLogs()
+    func deleteOldLoggs()
 }
 
 struct LoggerRepositoryImpl: LoggerRepository {
     static let shared: LoggerRepository = LoggerRepositoryImpl()
+    static let logExpiration = -48
     
     private let service: PersistenceService
     
@@ -75,5 +77,25 @@ struct LoggerRepositoryImpl: LoggerRepository {
             return
         }
         service.saveContext()
+    }
+    
+    func deleteOldLoggs() {
+        guard let oldDate = Calendar.current.date(byAdding: .hour,
+                                                  value: LoggerRepositoryImpl.logExpiration,
+                                                  to: Date()) else {
+            return
+        }
+        OperationQueue.coredataSaveQueue.isSuspended = true
+        OperationQueue.coredataSaveQueue.cancelAllOperations()
+        let request: NSFetchRequest<NSFetchRequestResult> = CDLogger.fetchRequest()
+        request.predicate = NSPredicate(format: "date < %@", oldDate as NSDate)
+        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        
+        do {
+            try service.backgroundContext.execute(deleteRequest)
+        } catch { }
+        
+        OperationQueue.coredataSaveQueue.isSuspended = false
     }
 }

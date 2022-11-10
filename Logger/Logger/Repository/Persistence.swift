@@ -8,6 +8,7 @@
 import CoreData
 
 protocol PersistenceService {
+    var backgroundContext: NSManagedObjectContext { get }
     var viewContext: NSManagedObjectContext { get }
     
     func saveContext()
@@ -18,6 +19,10 @@ struct PersistenceServiceImpl: PersistenceService {
     
     var viewContext: NSManagedObjectContext {
         return container.viewContext
+    }
+    
+    var backgroundContext: NSManagedObjectContext {
+        return container.newBackgroundContext()
     }
     
     private let container: NSPersistentContainer

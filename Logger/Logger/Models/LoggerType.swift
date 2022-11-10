@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-enum LoggerType: String {
+public enum LoggerType: String {
     case error
     case info
     case debug
     case networking
-    case keychain
-    case userDefaults
     
     var color: Color {
         switch self {
@@ -25,10 +23,19 @@ enum LoggerType: String {
             return Color.gray
         case .networking:
             return Color.purple
-        case .keychain:
-            return Color.yellow
-        case .userDefaults:
-            return Color.orange
+        }
+    }
+    
+    var uiColor: UIColor {
+        switch self {
+        case .error:
+            return UIColor.red
+        case .info:
+            return UIColor.blue
+        case .debug:
+            return UIColor.gray
+        case .networking:
+            return UIColor.purple
         }
     }
 }
