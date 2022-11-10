@@ -14,7 +14,7 @@ public final class FilmeoLogger {
     private let consoleLogger: ConsoleLogger
         
    private init(loggerRepository: LoggerRepository = LoggerRepositoryImpl.shared,
-         consoleLogger: ConsoleLogger = .shared) {
+                consoleLogger: ConsoleLogger = .shared) {
         self.loggerRepository = loggerRepository
         self.consoleLogger = consoleLogger
     }

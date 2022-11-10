@@ -7,7 +7,7 @@
 
 import OSLog
 
-public final class ConsoleLogger {
+final class ConsoleLogger {
     static let shared = ConsoleLogger()
     
     private let logger: Logger
@@ -16,7 +16,7 @@ public final class ConsoleLogger {
         self.logger = logger
     }
     
-    public func log(_ message: Any..., type: OSLogType, loggerPrivacy: LoggerPrivacyType, category: String) {
+    func log(_ message: Any..., type: OSLogType, loggerPrivacy: LoggerPrivacyType, category: String) {
         switch loggerPrivacy {
         case .private:
             logger.log(level: type, "\(message, privacy: .private)")
@@ -29,7 +29,7 @@ public final class ConsoleLogger {
         }
     }
     
-    public func log(_ error: Error, loggerPrivacy: LoggerPrivacyType, category: String) {
+    func log(_ error: Error, loggerPrivacy: LoggerPrivacyType, category: String) {
         switch loggerPrivacy {
         case .private:
             logger.error("\(error, privacy: .private)")
