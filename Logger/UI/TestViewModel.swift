@@ -12,30 +12,25 @@ import OSLog
 final class TestViewModel: ObservableObject {
     
     private var subscriber: AnyCancellable?
-    private let logger: FilmeoLogger
-    
-    init(logger: FilmeoLogger = .shared) {
-        self.logger = logger
-    }
     
     func saveInfoLog() {
-        logger.log(type: .info, "INFO", category: LoggerType.info.rawValue)
+        FilmeoLogger.log(type: .info, "INFO", category: LoggerType.info.rawValue)
     }
     
     func saveErrorLog() {
-        logger.log(type: .error, "ERROR", category: LoggerType.error.rawValue)
+        FilmeoLogger.log(type: .error, "ERROR", category: LoggerType.error.rawValue)
     }
     
     func saveDebugLog() {
-        logger.log(type: .debug, "DEBUG", category: LoggerType.debug.rawValue)
+        FilmeoLogger.log(type: .debug, "DEBUG", category: LoggerType.debug.rawValue)
     }
     
     func saveNetworkLog() {
-        logger.log(type: .networking, "REQUEST", category: LoggerType.networking.rawValue)
+        FilmeoLogger.log(type: .networking, "REQUEST", category: LoggerType.networking.rawValue)
     }
     
     func deleteLogs() {
-        logger.deleteAllLogs()
+        FilmeoLogger.deleteAllLogs()
     }
     
     func get() {
@@ -47,9 +42,9 @@ final class TestViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    self.logger.log(type: .info, "Finished fetching", category: LoggerType.info.rawValue)
+                    FilmeoLogger.log(type: .info, "Finished fetching", category: LoggerType.info.rawValue)
                 case .failure(let error):
-                    self.logger.log(error, category: LoggerType.error.rawValue)
+                    FilmeoLogger.log(error, category: LoggerType.error.rawValue)
                 }
             } receiveValue: { data, _ in
                 print(data)

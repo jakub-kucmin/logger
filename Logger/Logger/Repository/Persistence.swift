@@ -27,8 +27,8 @@ struct PersistenceServiceImpl: PersistenceService {
     
     private let container: NSPersistentContainer
     
-    private init(name: String = "Logger") {
-        container = NSPersistentContainer(name: name)
+    private init() {
+        container = DefaultPersistentContainer.getContainer()
         container.loadPersistentStores { _, error in
             if let error = error {
                 print(error)
@@ -47,5 +47,18 @@ struct PersistenceServiceImpl: PersistenceService {
                 }
             }
         }
+    }
+}
+
+final class DefaultPersistentContainer: NSObject {
+    static func getContainer(for name: String = "Logger") -> NSPersistentContainer {
+        guard let modelURL = Bundle(for: self).url(forResource: name, withExtension: "momd"),
+              let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+            let container = NSPersistentContainer(name: name)
+            return container
+        }
+        let container = NSPersistentContainer(name: name,
+                                              managedObjectModel: managedObjectModel)
+        return container
     }
 }

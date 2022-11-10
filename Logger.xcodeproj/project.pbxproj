@@ -30,6 +30,7 @@
 		8A87D81B2915115C00B184ED /* Networking+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D81A2915115C00B184ED /* Networking+Extension.swift */; };
 		8A8AAD71291AA116009D825F /* OperationQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */; };
 		8A8AAD73291D04DE009D825F /* LoggerPrivacyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */; };
+		8A8AAD75291D1A1D009D825F /* filmeoLogger.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AAD74291D1A1D009D825F /* filmeoLogger.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		8A87D81A2915115C00B184ED /* Networking+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Extension.swift"; sourceTree = "<group>"; };
 		8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extension.swift"; sourceTree = "<group>"; };
 		8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPrivacyType.swift; sourceTree = "<group>"; };
+		8A8AAD74291D1A1D009D825F /* filmeoLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.yaml; fileEncoding = 4; path = filmeoLogger.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		8A87D7CF2913BC9E00B184ED = {
 			isa = PBXGroup;
 			children = (
+				8A8AAD74291D1A1D009D825F /* filmeoLogger.podspec */,
 				8A87D7EE2913BFFD00B184ED /* .swiftlint.yml */,
 				8A87D7DA2913BC9E00B184ED /* Logger */,
 				8A87D7D92913BC9E00B184ED /* Products */,
@@ -90,8 +93,8 @@
 		8A87D7DA2913BC9E00B184ED /* Logger */ = {
 			isa = PBXGroup;
 			children = (
+				8A8AAD76291D1D24009D825F /* Logger */,
 				8A87D81329150F5F00B184ED /* UI */,
-				8A87D81229150F3400B184ED /* Logger */,
 				8A87D7DB2913BC9E00B184ED /* LoggerApp.swift */,
 				8A87D7DF2913BCA000B184ED /* Assets.xcassets */,
 				8A87D7E12913BCA000B184ED /* Preview Content */,
@@ -110,9 +113,9 @@
 		8A87D7F22913C73C00B184ED /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */,
 				8A87D7E42913BCA000B184ED /* Persistence.swift */,
 				8A87D7F32913C77100B184ED /* LoggerRepository.swift */,
-				8A87D7FA2913CC0A00B184ED /* Logger.xcdatamodeld */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -120,25 +123,9 @@
 		8A87D7F52913C7A700B184ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8A87D7F62913C7B600B184ED /* LoggerModel.swift */,
-				8A87D7F82913C7C800B184ED /* LoggerType.swift */,
 				8A87D81729150FE800B184ED /* NetworkLogModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8A87D81229150F3400B184ED /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				8A87D8192915115000B184ED /* Extensions */,
-				8A87D81429150F8B00B184ED /* NetworkLogger */,
-				8A87D7F22913C73C00B184ED /* Repository */,
-				8A87D7F52913C7A700B184ED /* Models */,
-				8A87D80F2914FCFA00B184ED /* ConsoleLogger.swift */,
-				8A87D7FE2913D71000B184ED /* FilmeoLogger.swift */,
-				8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */,
-			);
-			path = Logger;
 			sourceTree = "<group>";
 		};
 		8A87D81329150F5F00B184ED /* UI */ = {
@@ -178,6 +165,22 @@
 				8A87D80D2914080600B184ED /* LogDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		8A8AAD76291D1D24009D825F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				8A87D8192915115000B184ED /* Extensions */,
+				8A87D81429150F8B00B184ED /* NetworkLogger */,
+				8A87D7F52913C7A700B184ED /* Models */,
+				8A87D7F22913C73C00B184ED /* Repository */,
+				8A87D80F2914FCFA00B184ED /* ConsoleLogger.swift */,
+				8A87D7FE2913D71000B184ED /* FilmeoLogger.swift */,
+				8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */,
+				8A87D7F82913C7C800B184ED /* LoggerType.swift */,
+				8A87D7F62913C7B600B184ED /* LoggerModel.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8AAD75291D1A1D009D825F /* filmeoLogger.podspec in Resources */,
 				8A87D7EF2913BFFD00B184ED /* .swiftlint.yml in Resources */,
 				8A87D7E32913BCA000B184ED /* Preview Assets.xcassets in Resources */,
 				8A87D7E02913BCA000B184ED /* Assets.xcassets in Resources */,

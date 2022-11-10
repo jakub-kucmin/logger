@@ -8,42 +8,34 @@
 import OSLog
 
 public final class FilmeoLogger {
-    static let shared = FilmeoLogger()
+    static let loggerRepository: LoggerRepository = LoggerRepositoryImpl.shared
+    static let consoleLogger: ConsoleLogger = .shared
     
-    private let loggerRepository: LoggerRepository
-    private let consoleLogger: ConsoleLogger
-        
-   private init(loggerRepository: LoggerRepository = LoggerRepositoryImpl.shared,
-         consoleLogger: ConsoleLogger = .shared) {
-        self.loggerRepository = loggerRepository
-        self.consoleLogger = consoleLogger
-    }
-    
-    public func log(type: LoggerType, _ message: Any..., loggerPrivacy: LoggerPrivacyType = .private, category: String) {
+    public static func log(type: LoggerType, _ message: Any..., loggerPrivacy: LoggerPrivacyType = .private, category: String) {
         let log = LoggerModel(type: type, message: "\(message)")
         loggerRepository.save(model: log)
         consoleLogger.log(message, type: .default, loggerPrivacy: loggerPrivacy, category: category)
     }
     
-    public func log(_ error: Error, loggerPrivacy: LoggerPrivacyType = .private, category: String) {
+    public static func log(_ error: Error, loggerPrivacy: LoggerPrivacyType = .private, category: String) {
         let log = LoggerModel(type: .error, message: "\(error)")
         loggerRepository.save(model: log)
         consoleLogger.log(error, loggerPrivacy: loggerPrivacy, category: category)
     }
     
-    public func getLogs() -> [LoggerModel] {
+    public static func getLogs() -> [LoggerModel] {
         return loggerRepository.fetch()
     }
     
-    public func getLog(id: UUID) -> LoggerModel? {
+    public static func getLog(id: UUID) -> LoggerModel? {
         return loggerRepository.fetch(id: id)
     }
     
-    public func deleteAllLogs() {
+    public static func deleteAllLogs() {
         loggerRepository.deleteAllLogs()
     }
     
-    public func deleteOldLogs() {
+    public static func deleteOldLogs() {
         loggerRepository.deleteOldLoggs()
     }
 }

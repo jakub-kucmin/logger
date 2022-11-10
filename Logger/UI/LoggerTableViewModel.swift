@@ -9,19 +9,16 @@ import Foundation
 
 final class LoggerTableViewModel: ObservableObject {
     @Published var loggerModel: [LoggerModel]
-    
-    private let logger: FilmeoLogger
-    
-    init(loggerModel: [LoggerModel] = [], logger: FilmeoLogger = .shared) {
+        
+    init(loggerModel: [LoggerModel] = []) {
         self.loggerModel = loggerModel
-        self.logger = logger
     }
     
     func getLogs() {
-        loggerModel = logger.getLogs()
+        loggerModel = FilmeoLogger.getLogs()
     }
     
     func deleteOldLoggs() {
-        logger.deleteOldLogs()
+        FilmeoLogger.deleteOldLogs()
     }
 }

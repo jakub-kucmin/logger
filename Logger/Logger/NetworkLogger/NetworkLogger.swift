@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkLogger: URLProtocol {
+final class NetworkLogger: URLProtocol {
     var model = NetworkLogModel()
     var response: URLResponse?
     var responseData: NSMutableData?
