@@ -22,7 +22,7 @@ struct Cell: View {
             Spacer()
             Text(loggerModel.getDate())
                 .padding(.trailing, 24)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.typo)
         }
         .frame(height: 50)
     }

@@ -14,7 +14,7 @@ struct TestView: View {
         VStack(spacing: 24) {
             buttons
             NavigationLink {
-                LoggerTable(viewModel: LoggerTableViewModel(), backgroundColor: .yellow, foregroundColor: .black)
+                LoggerTable(viewModel: LoggerTableViewModel())
             } label: {
                 Text("Logs")
                     .foregroundColor(.green)
