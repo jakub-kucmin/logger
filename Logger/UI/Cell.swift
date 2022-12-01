@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Cell: View {
-    var loggerModel: LoggerModel
+public struct Cell: View {
+    public var loggerModel: LoggerModel
     
-    var body: some View {
+    public var body: some View {
         HStack {
             Rectangle()
                 .frame(width: 4)
@@ -22,7 +22,7 @@ struct Cell: View {
             Spacer()
             Text(loggerModel.getDate())
                 .padding(.trailing, 24)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.typo)
         }
         .frame(height: 50)
     }

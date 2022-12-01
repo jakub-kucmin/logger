@@ -20,8 +20,6 @@
 		8A87D8012913DE6800B184ED /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8002913DE6800B184ED /* Cell.swift */; };
 		8A87D8042913DFDE00B184ED /* LoggerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8032913DFDE00B184ED /* LoggerTable.swift */; };
 		8A87D8062913E00100B184ED /* LoggerTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8052913E00100B184ED /* LoggerTableViewModel.swift */; };
-		8A87D8082913E21300B184ED /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8072913E21300B184ED /* TestView.swift */; };
-		8A87D80A2913E22300B184ED /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D8092913E22300B184ED /* TestViewModel.swift */; };
 		8A87D80C2914077300B184ED /* LogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D80B2914077300B184ED /* LogDetails.swift */; };
 		8A87D80E2914080600B184ED /* LogDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D80D2914080600B184ED /* LogDetailsViewModel.swift */; };
 		8A87D8102914FCFA00B184ED /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A87D80F2914FCFA00B184ED /* ConsoleLogger.swift */; };
@@ -31,6 +29,8 @@
 		8A8AAD71291AA116009D825F /* OperationQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */; };
 		8A8AAD73291D04DE009D825F /* LoggerPrivacyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */; };
 		8A8AAD75291D1A1D009D825F /* filmeoLogger.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AAD74291D1A1D009D825F /* filmeoLogger.podspec */; };
+		8AB631B6292E6B8200920931 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB631B5292E6B8200920931 /* Color+Extension.swift */; };
+		8AB631B8292F5DD900920931 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB631B7292F5DD900920931 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,6 @@
 		8A87D8002913DE6800B184ED /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8A87D8032913DFDE00B184ED /* LoggerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTable.swift; sourceTree = "<group>"; };
 		8A87D8052913E00100B184ED /* LoggerTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTableViewModel.swift; sourceTree = "<group>"; };
-		8A87D8072913E21300B184ED /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		8A87D8092913E22300B184ED /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8A87D80B2914077300B184ED /* LogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetails.swift; sourceTree = "<group>"; };
 		8A87D80D2914080600B184ED /* LogDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailsViewModel.swift; sourceTree = "<group>"; };
 		8A87D80F2914FCFA00B184ED /* ConsoleLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLogger.swift; sourceTree = "<group>"; };
@@ -59,6 +57,8 @@
 		8A8AAD70291AA116009D825F /* OperationQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extension.swift"; sourceTree = "<group>"; };
 		8A8AAD72291D04DE009D825F /* LoggerPrivacyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPrivacyType.swift; sourceTree = "<group>"; };
 		8A8AAD74291D1A1D009D825F /* filmeoLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.yaml; fileEncoding = 4; path = filmeoLogger.podspec; sourceTree = "<group>"; };
+		8AB631B5292E6B8200920931 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		8AB631B7292F5DD900920931 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +131,12 @@
 		8A87D81329150F5F00B184ED /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8AB631B4292E6B7100920931 /* Extensions */,
 				8A87D81C29193ED000B184ED /* Details */,
 				8A87D8002913DE6800B184ED /* Cell.swift */,
 				8A87D8032913DFDE00B184ED /* LoggerTable.swift */,
 				8A87D8052913E00100B184ED /* LoggerTableViewModel.swift */,
-				8A87D8072913E21300B184ED /* TestView.swift */,
-				8A87D8092913E22300B184ED /* TestViewModel.swift */,
+				8AB631B7292F5DD900920931 /* HeaderView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -181,6 +181,14 @@
 				8A87D7F62913C7B600B184ED /* LoggerModel.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		8AB631B4292E6B7100920931 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8AB631B5292E6B8200920931 /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,15 +286,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A87D8042913DFDE00B184ED /* LoggerTable.swift in Sources */,
+				8AB631B6292E6B8200920931 /* Color+Extension.swift in Sources */,
 				8A87D7F92913C7C800B184ED /* LoggerType.swift in Sources */,
-				8A87D8082913E21300B184ED /* TestView.swift in Sources */,
 				8A87D8102914FCFA00B184ED /* ConsoleLogger.swift in Sources */,
 				8A87D7E52913BCA000B184ED /* Persistence.swift in Sources */,
 				8A87D7F42913C77100B184ED /* LoggerRepository.swift in Sources */,
+				8AB631B8292F5DD900920931 /* HeaderView.swift in Sources */,
 				8A8AAD73291D04DE009D825F /* LoggerPrivacyType.swift in Sources */,
 				8A87D7FC2913CC0A00B184ED /* Logger.xcdatamodeld in Sources */,
 				8A87D81B2915115C00B184ED /* Networking+Extension.swift in Sources */,
-				8A87D80A2913E22300B184ED /* TestViewModel.swift in Sources */,
 				8A87D81629150FAE00B184ED /* NetworkLogger.swift in Sources */,
 				8A87D80C2914077300B184ED /* LogDetails.swift in Sources */,
 				8A87D80E2914080600B184ED /* LogDetailsViewModel.swift in Sources */,

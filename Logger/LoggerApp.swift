@@ -12,7 +12,7 @@ struct LoggerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                TestView(viewModel: TestViewModel())
+                LoggerTable(viewModel: LoggerTableViewModel())
             }
         }
     }

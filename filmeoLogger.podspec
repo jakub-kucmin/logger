@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "filmeoLogger"
+  spec.name         = "FilmeoLogger"
   spec.version      = "0.0.1"
   spec.summary      = "Logger created for filmeo app."
 
@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Logger/Logger/**/*.{h,m,swift}"
+  spec.source_files  = "Logger/Logger/**/*.{h,m,swift}", "Logger/UI/**/*.swift"
 
 # spec.exclude_files   = "Logger/**/LoggerModel.swift"
 
@@ -121,7 +121,7 @@ Pod::Spec.new do |spec|
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
+    spec.ios.framework  = "SwiftUI"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
 
   # spec.library   = "iconv"

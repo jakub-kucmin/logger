@@ -7,18 +7,18 @@
 
 import Foundation
 
-final class LoggerTableViewModel: ObservableObject {
+open class LoggerTableViewModel: ObservableObject {
     @Published var loggerModel: [LoggerModel]
         
-    init(loggerModel: [LoggerModel] = []) {
+    public init(loggerModel: [LoggerModel] = []) {
         self.loggerModel = loggerModel
     }
     
-    func getLogs() {
+    open func getLogs() {
         loggerModel = FilmeoLogger.getLogs()
     }
     
-    func deleteOldLoggs() {
+    open func deleteOldLoggs() {
         FilmeoLogger.deleteOldLogs()
     }
 }
