@@ -11,7 +11,8 @@ public enum LoggerType: String {
     case error
     case info
     case debug
-    case networking
+    case post
+    case get
     
     var color: Color {
         switch self {
@@ -21,7 +22,7 @@ public enum LoggerType: String {
             return Color.blue
         case .debug:
             return Color.gray
-        case .networking:
+        case .post, .get:
             return Color.purple
         }
     }
@@ -34,7 +35,7 @@ public enum LoggerType: String {
             return UIColor.blue
         case .debug:
             return UIColor.gray
-        case .networking:
+        case .post, .get:
             return UIColor.purple
         }
     }
