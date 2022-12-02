@@ -120,8 +120,11 @@ extension NetworkLogger: URLSessionDataDelegate {
         log.responseDate = model.responseDate
         log.body = model.formattedRequestLog()
         log.responseBody = model.formattedResponseLog()
-        log.type = .networking
-        
+        if model.requestMethod == "GET" {
+            log.type = .get
+        } else if model.requestMethod == "POST" {
+            log.type = .post
+        }
         if let status = model.responseStatus {
             log.status = status
         }

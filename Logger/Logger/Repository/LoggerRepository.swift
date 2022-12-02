@@ -34,7 +34,9 @@ struct LoggerRepositoryImpl: LoggerRepository {
     
     func fetch() -> [LoggerModel] {
         let request = CDLogger.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         var result: [CDLogger]
+        request.sortDescriptors = [sortDescriptor]
         
         do {
             try result = service.viewContext.fetch(request)
